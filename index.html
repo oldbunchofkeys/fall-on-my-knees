@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fall on my knees</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+  </style>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav__main">
+      <button id="hamburger" class="nav__hamburger-button">
+        <svg class="nav__hamburger-icon" fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 30 30" width="30px" height="30px"><path d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"/></svg>
+      </button>
+    </div>
+    <div id="menu" style="display:none; position:relative;">
+      <div style="position:absolute;top:10px;right:10px;background-color:white;width: 100px;">
+        <a class="nav__hamburger-links" href="#">about</a>
+        <a class="nav__hamburger-links" href="#">tunes</a>
+        <a class="nav__hamburger-links" href="#">home</a>
+      </div>
+      
+    </div>
+  </nav>
+  <h1 class="main__heading">Fall on My Knees</h1>
+  <div class="grid__wrapper">
+    <div class="grid__container">
+      <div class="grid__item-source">
+        <audio id="tommy-audio" controls src="assets/FallOnMyKnees.mp3"></audio>
+      </div>
+      <div class="grid__item-description" id="tommy-click">
+        <h3>Tommy Jarrell (🎻) and Fred Cockerham (🪕)</h3>
+        <p>This recording from the preeminent masters of Round Peak style fiddling comes from the slippery hill website.</p>
+      </div>
+
+      <div class="grid__item-source">
+        <iframe id="greg-video" src="https://www.youtube.com/embed/6LW0i9ZXE6c" title="YouTube video player" frameborder="0" allow="autoplay"></iframe>
+      </div>
+      <div class="grid__item-description" id="greg-click">
+        <h3>Greg Hooven (🎻) and friends</h3>
+        <p>This recording from the late great Greg Hooven features James Leva on fiddle, Jordan Puryear on guitar, Dirk Powell on guitar, and Rose Sinclair on banjo. Video from Dave Wells' YouTube channel.</p>
+      </div>
+      
+      <div class="grid__item-source">
+        <iframe id="kirk-video" src="https://www.youtube.com/embed/UXplbfs1q_4" title="YouTube video player" frameborder="0" allow="autoplay"></iframe>
+      </div>
+      <div class="grid__item-description" id="kirk-click">
+        <h3>Kirk Sutphin (🎻), Kevin Fore (🪕), and Chester MacMillian</h3>
+        <p">This recording of Round Peak fiddle and banjo legend Kirk Sutphin comes from Oldtimerjp's YouTube channel.</p>
+      </div>
+      <div class="grid__item-source">
+        <iframe id="rosie-video" src="https://www.youtube.com/embed/3mgTi1inx40" title="YouTube video player" frameborder="0" allow="autoplay"></iframe>
+      </div>
+      <div class="grid__item-description" id="rosie-click">
+        <h3>Rosie Newton (🎻) and Richie Stearns (🪕)</h3>
+        <p>Modern day Ithaca old time stars Richie Stearns and Rosie Newton play this at the 24th GrassRoots Festival of Music and Dance in Trumansburg, New York</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  // tommy description click function
+  document.querySelector("#tommy-click").addEventListener('click', () => {
+    document.querySelector("#tommy-audio").play();
+  }, {once : true});
+  
+  // greg description click function
+  document.querySelector("#greg-click").addEventListener('click', () => {
+    document.querySelector("#greg-video").src += '?autoplay=1';
+  }, {once : true});
+  
+  // kirk description click function
+  document.querySelector("#kirk-click").addEventListener('click', () => {
+    document.querySelector("#kirk-video").src += '?autoplay=1';
+  }, {once : true});
+  
+  // rosie description click function
+  document.querySelector("#rosie-click").addEventListener('click', () => {
+    document.querySelector("#rosie-video").src += '?autoplay=1';
+  }, {once : true});
+  
+  // hamburger menu
+  document.querySelector("#hamburger").addEventListener('click', () => {
+    if (document.querySelector("#menu").style.display === "none") {
+      document.querySelector("#menu").style.display = 'block';
+    } else if (document.querySelector("#menu").style.display === "block") {
+      document.querySelector("#menu").style.display = "none";
+    }  
+  });
+</script>
+</html>
