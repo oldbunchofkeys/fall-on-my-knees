@@ -64,24 +64,25 @@
   </div>
 </body>
 <script>
-  // tommy description click function
+
+  function clickDescriptionPlayVideo (sourceId) {
+    document.querySelector(sourceId).src += '?autoplay=1';
+  }
+  // tommy description click audio - only called once so didn't make it its own a function
   document.querySelector("#tommy-click").addEventListener('click', () => {
     document.querySelector("#tommy-audio").play();
   }, {once : true});
   
-  // greg description click function
   document.querySelector("#greg-click").addEventListener('click', () => {
-    document.querySelector("#greg-video").src += '?autoplay=1';
+    clickDescriptionPlayVideo('#greg-video');
   }, {once : true});
   
-  // kirk description click function
   document.querySelector("#kirk-click").addEventListener('click', () => {
-    document.querySelector("#kirk-video").src += '?autoplay=1';
+    clickDescriptionPlayVideo('#kirk-video');
   }, {once : true});
   
-  // rosie description click function
   document.querySelector("#rosie-click").addEventListener('click', () => {
-    document.querySelector("#rosie-video").src += '?autoplay=1';
+    clickDescriptionPlayVideo('#rosie-video');
   }, {once : true});
   
   // hamburger menu
